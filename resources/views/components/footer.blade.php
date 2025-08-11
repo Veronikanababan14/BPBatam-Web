@@ -5,7 +5,7 @@
 
             <!-- Kolom 1: Logo dan Deskripsi -->
             <div>
-                <img src="{{ asset('images/logobpbatam1.png') }}" alt="Logo BP Batam" class="mb-4 w-32">
+                <img src="{{ asset('images/logobpbatam.png') }}" alt="Logo BP Batam" class="mb-4 w-32">
                 <p class="text-sm leading-relaxed">
                     Portal Layanan BP Batam adalah sistem digital yang terintegrasi untuk mempermudah masyarakat dalam mengakses layanan perizinan dan informasi lainnya secara cepat, transparan, dan efisien.
                 </p>
@@ -43,7 +43,7 @@
             <div class="md:border-l md:border-white/40 md:pl-6">
                 <h3 class="font-semibold text-lg mb-3">Hubungi Kami</h3>
                 <div class="flex items-start text-sm mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-400 mt-1 mr-2" fill="none" viewBox="0 0 24 24"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-400 mt-1 mr-2" fill="none" viewBox="0 0 25 25"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />

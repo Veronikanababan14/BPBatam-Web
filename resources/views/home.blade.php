@@ -77,9 +77,9 @@
 
         </div>
 
-        <!-- Judul Kategori -->
+        <!-- Judul Daftar Layanan -->
         <div class="mt-12 bg-red-100 py-4">
-            <h3 class="text-2xl font-bold text-center">Layanan Berdasarkan Kategori</h3>
+            <h3 class="text-2xl font-bold text-center text-orange-500">Layanan Berdasarkan Kategori</h3>
         </div>
 
         <!-- Kategori -->

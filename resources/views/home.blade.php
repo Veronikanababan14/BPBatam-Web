@@ -97,7 +97,7 @@
                           d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
                 </svg>
             </div>
-=======
+
    <!-- Hero Section -->
 <section class="mt-1 flex items-center ml-8 relative">
     <!-- Bagian Teks -->
@@ -138,8 +138,6 @@
     </div>
 </div>
 
-
->>>>>>> 7ab7f87d847ba7ac1ad89888ca1a1524ab51307e
         </div>
 </section>
 

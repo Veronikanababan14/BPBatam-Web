@@ -43,10 +43,6 @@
 
 
         </div>
-        <div class="hero-image">
-            <img src="{{ asset('images/hero-ilustration.png') }}" alt="Ilustrasi Perizinan">
-        </div>
-    </div>
 </section>
 
 <!-- Judul Daftar Layanan -->

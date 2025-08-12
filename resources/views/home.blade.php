@@ -1,22 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-
 <style>
 .hero-section {
     background: url('{{ asset('images/background.jpg') }}') no-repeat center center;
     background-size: cover;
-    padding: 100px 0;
+    padding: 100px 0; /* jarak atas bawah */
 }
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 60px; /* jarak antar kolom lebih lebar */
     max-width: 1200px;
     margin: auto;
-    padding: 0 40px;
+    padding: 0 40px; /* jarak kiri-kanan */
 }
 .hero-text {
     flex: 1 1 50%;
@@ -73,30 +72,16 @@
 }
 </style>
 
-<!-- Hero Section -->
-<section class="hero-section rounded-3xl">
+<section class="hero-section">
     <div class="hero-container">
         <div class="hero-text">
-            <h1 class="text-3xl font-bold text-blue-700">
-                Selamat Datang di Portal Layanan Perizinan
-            </h1>
-            <p class="text-gray-600 mt-2">
-                Sistem perizinan yang cepat, transparan, dan terintegrasi untuk anda
-            </p>
-            <div class="hero-buttons mt-4">
+            <h1>Selamat Datang di Portal Layanan Perizinan</h1>
+            <p>Sistem perizinan yang cepat, transparan, dan terintegrasi untuk anda</p>
+            <div class="hero-buttons">
                 <a href="#" class="btn btn-primary">Jelajahi Layanan</a>
             </div>
-            <!-- Search with icon -->
-            <div class="relative max-w-sm mt-3">
-                <input type="text" 
-                       class="w-full p-2 pr-10 border border-gray-400 rounded text-neutral-600" 
-                       placeholder="Cari Layanan di sini...">
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                     class="h-5 w-5 text-blue-500 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" 
-                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
-                </svg>
+            <div class="hero-search">
+                <input type="text" placeholder="Cari layanan disini...">
             </div>
         </div>
         <div class="hero-image">
@@ -105,9 +90,9 @@
     </div>
 </section>
 
-<!-- Layanan -->
+{{-- Konten Layanan --}}
 <section class="container my-5">
-    <h2 class="mb-4 font-bold text-2xl">Layanan Kami</h2>
+    <h2 class="mb-4">Layanan Kami</h2>
     <div class="row">
         <div class="col-md-4">
             <div class="card p-3">
@@ -129,5 +114,4 @@
         </div>
     </div>
 </section>
-
 @endsection

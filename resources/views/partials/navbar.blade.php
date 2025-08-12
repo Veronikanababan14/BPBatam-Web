@@ -1,4 +1,4 @@
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
+<nav class="fixed top-0 left-0 w-full z-50 bg-white border-gray-200 dark:bg-gray-900 shadow">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="{{ asset('images/logobpbatam.png') }}" class="h-12" alt="Logo" />
@@ -32,7 +32,10 @@
               <a href="#" class="block py-2 px-3 text-orange-500 bg-blue-700 rounded-sm md:bg-transparent md:p-0 font-bold" aria-current="page">Login</a>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 text-white rounded-sm bg-blue-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:px-2 md:py-1 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-bold">Sign Up</a>
+              <a href="#" class="flex justify-center items-center text-white rounded-sm bg-blue-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 px-4 py-2 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-bold">
+  Sign Up
+</a>
+
             </li>
           </ul>
         </div>

@@ -33,12 +33,14 @@
                         <li><a href="#" class="hover:underline">Peta Situs</a></li>
                     </ul>
                     <h4 class="font-semibold text-sm mt-2 mb-1">Media Sosial</h4>
-                    <div class="flex space-x-2">
-                        <img src="{{ asset('images/fb.png') }}" alt="Facebook" class="w-4 h-4">
-                        <img src="{{ asset('images/twitter.png') }}" alt="Twitter" class="w-4 h-4">
-                        <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="w-4 h-4">
-                        <img src="{{ asset('images/youtube.png') }}" alt="YouTube" class="w-4 h-4">
-                    </div>
+                    <!-- Mobile -->
+<div class="flex space-x-2">
+    <img src="{{ asset('images/fb.png') }}" alt="Facebook" class="w-4 h-4 md:w-5 md:h-5">
+    <img src="{{ asset('images/twitter.png') }}" alt="Twitter" class="w-4 h-4 md:w-5 md:h-5">
+    <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="w-4 h-4 md:w-5 md:h-5">
+    <img src="{{ asset('images/youtube.png') }}" alt="YouTube" class="w-4 h-4 md:w-5 md:h-5">
+</div>
+
                 </div>
 
                 <!-- Hubungi Kami -->

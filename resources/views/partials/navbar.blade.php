@@ -49,7 +49,7 @@
         <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">FAQ</a></li>
         <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">Kontak</a></li>
         <li><a href="#" class="block py-2 px-3 text-orange-500 font-bold">Login</a></li>
-        <li><a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm text-center font-bold">Sign Up</a></li>
+        <li><a href="#" class="flex justify-center items-center text-white bg-blue-700 hover:bg-blue-800 px-3 py-1.5 rounded-sm font-bold text-sm">Sign Up</a></li>
       </ul>
   </div>
 </nav>

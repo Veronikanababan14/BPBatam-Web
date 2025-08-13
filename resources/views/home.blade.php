@@ -128,67 +128,72 @@
 
 
 <!-- Judul -->
-   <div class="mt-12 bg-slate-200 py-4">
+<div class="mt-12 bg-slate-200 py-4">
     <h3 class="text-2xl font-bold text-center text-orange-500">
         Layanan Perizinan Unggulan
     </h3>
 </div>
 
-    <!-- Carousel Layanan -->
-    <div class="flex items-center justify-center space-x-6">
+<!-- Carousel Layanan -->
+<div class="flex items-center justify-center space-x-18 mt-8">
+
+    <!-- Kartu Kiri -->
+    <div class="bg-white rounded-lg shadow-lg p-4 w-64">
+        <h4 class="text-lg font-semibold text-blue-700">Layanan 1</h4>
+        <p class="text-sm text-gray-600 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        </p>
+        <img src="{{ asset('images/layanan_1.png') }}" alt="layanan 1" class="w-full h-40 object-cover rounded mt-3">
+        <div class="flex items-center mt-3 text-sm text-gray-500">
+            ❌ <span class="ml-2">Tonton Video Penjelasan</span>
+        </div>
+        <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">
+            Lihat Detail
+        </a>
+    </div>
+
+    <!-- Kartu Tengah dengan Panah -->
+    <div class="relative bg-white rounded-lg shadow-lg p-6 w-80">
         
         <!-- Panah Kiri -->
-        <button class="text-3xl text-gray-500 hover:text-gray-700">&#8249;</button>
+        <button class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[250%] text-6xl text-gray-500 hover:text-gray-700">
+            &#8249;
+        </button>
 
-        <!-- Kartu Kiri -->
-        <div class="bg-white rounded-lg shadow-lg p-4 w-64">
-            <h4 class="text-lg font-semibold text-blue-700">Layanan 1</h4>
-            <p class="text-sm text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </p>
-            <img src="{{ asset('images/layanan_1.png') }}" alt="layanan 1" class="w-full h-40 object-cover rounded mt-3">
-            <div class="flex items-center mt-3 text-sm text-gray-500">
-                ❌ <span class="ml-2">Tonton Video Penjelasan</span>
-            </div>
-            <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">
-                Lihat Detail
-            </a>
+        <h4 class="text-xl font-bold text-blue-700">Layanan 2</h4>
+        <p class="text-sm text-gray-600 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+        </p>
+        <img src="{{ asset('images/layanan_2.png') }}" alt="layanan 2" class="w-full h-52 object-cover rounded mt-3">
+        <div class="flex items-center mt-3 text-sm text-gray-500">
+            ❌ <span class="ml-2">Tonton Video Penjelasan</span>
         </div>
-
-        <!-- Kartu Tengah (lebih besar) -->
-        <div class="bg-white rounded-lg shadow-lg p-6 w-80">
-            <h4 class="text-xl font-bold text-blue-700">Layanan 2</h4>
-            <p class="text-sm text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-            </p>
-            <img src="{{ asset('images/layanan_2.png') }}" alt="layanan 2" class="w-full h-52 object-cover rounded mt-3">
-            <div class="flex items-center mt-3 text-sm text-gray-500">
-                ❌ <span class="ml-2">Tonton Video Penjelasan</span>
-            </div>
-            <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">
-                Lihat Detail
-            </a>
-        </div>
-
-        <!-- Kartu Kanan -->
-        <div class="bg-white rounded-lg shadow-lg p-4 w-64">
-            <h4 class="text-lg font-semibold text-blue-700">Layanan 3</h4>
-            <p class="text-sm text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </p>
-            <img src="{{ asset('images/layanan_3.png') }}" alt="layanan 3" class="w-full h-40 object-cover rounded mt-3">
-            <div class="flex items-center mt-3 text-sm text-gray-500">
-                ❌ <span class="ml-2">Tonton Video Penjelasan</span>
-            </div>
-            <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">
-                Lihat Detail
-            </a>
-        </div>
+        <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">
+            Lihat Detail
+        </a>
 
         <!-- Panah Kanan -->
-        <button class="text-3xl text-gray-500 hover:text-gray-700">&#8250;</button>
-
+        <button class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[250%] text-6xl text-gray-500 hover:text-gray-700">
+            &#8250;
+        </button>
     </div>
+
+    <!-- Kartu Kanan -->
+    <div class="bg-white rounded-lg shadow-lg p-4 w-64">
+        <h4 class="text-lg font-semibold text-blue-700">Layanan 3</h4>
+        <p class="text-sm text-gray-600 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        </p>
+        <img src="{{ asset('images/layanan_3.png') }}" alt="layanan 3" class="w-full h-40 object-cover rounded mt-3">
+        <div class="flex items-center mt-3 text-sm text-gray-500">
+            ❌ <span class="ml-2">Tonton Video Penjelasan</span>
+        </div>
+        <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">
+            Lihat Detail
+        </a>
+    </div>
+</div>
+
 
 </section>
 

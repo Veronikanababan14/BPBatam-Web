@@ -85,13 +85,13 @@
                         <li><a href="#" class="hover:underline">Syarat & Ketentuan</a></li>
                         <li><a href="#" class="hover:underline">Peta Situs</a></li>
                     </ul>
-                    <h4 class="font-semibold text-lg mt-4 mb-2">Media Sosial</h4>
-                    <div class="flex space-x-4">
-                        <img src="{{ asset('images/fb.png') }}" alt="Facebook" class="w-6 h-6">
-                        <img src="{{ asset('images/twitter.png') }}" alt="Twitter" class="w-6 h-6">
-                        <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="w-6 h-6">
-                        <img src="{{ asset('images/youtube.png') }}" alt="YouTube" class="w-6 h-6">
-                    </div>
+                    <h4 class="font-semibold text-sm mt-2 mb-1">Media Sosial</h4>
+<div class="flex flex-wrap gap-3">
+    <img src="{{ asset('images/fb.png') }}" alt="Facebook" class="w-5 h-5">
+    <img src="{{ asset('images/twitter.png') }}" alt="Twitter" class="w-5 h-5">
+    <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="w-5 h-5">
+    <img src="{{ asset('images/youtube.png') }}" alt="YouTube" class="w-5 h-5">
+</div>
                 </div>
             </div>
 

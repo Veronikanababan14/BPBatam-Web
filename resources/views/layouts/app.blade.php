@@ -47,12 +47,16 @@
     </style>
 </head>
 <body>
-    @include('partials.navbar')
+    @unless (request()->routeIs('login'))
+    @endunless
     
     <main>  
         @yield('content')
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        @include('components.footer')
+        @unless (request()->routeIs('login'))
+    @include('components.footer')
+@endunless
+
     </main>
 </body>
 </html>

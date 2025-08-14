@@ -34,7 +34,7 @@
         <!-- Menu Right -->
         <div class="my-auto">
           <ul class="font-medium flex flex-row md:space-x-8 items-center">
-            <li><a href="#" class="block py-2 px-3 text-orange-500 font-bold">Login</a></li>
+            <li><a href="{{ route('login') }}" class="text-orange-500 font-bold">Login</a></li>
             <li><a href="#" class="flex justify-center items-center text-white bg-blue-700 hover:bg-blue-800 px-4 py-3 rounded-sm font-bold">Sign Up</a></li>
           </ul>
         </div>

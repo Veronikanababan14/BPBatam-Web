@@ -3,60 +3,54 @@
 @section('content')
 
 <style>
-.hero-section{
+.hero-section {
     background: url('{{ asset('images/background.jpg') }}') no-repeat center center;
     background-size: cover;
-    padding: 100px 0;
-    border-radius: 20px;
+    padding: 100px 0; /* jarak besar atas bawah */
+    border-radius: 20;
     overflow: hidden;
-    /* supaya radius kiri–kanan terlihat */
-    margin: 100px 16px 0; /* top offset untuk navbar fixed */
+    margin-top: 20px /* kanan kiri full, jarak atas 100px */
 }
+
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 60px;
     max-width: 1200px;
-    margin: auto;
-    padding: 0 40px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
+
 .hero-text {
-    flex: 1 1 50%;
     max-width: 50%;
+    color: #fff;
 }
+
 .hero-text h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #fff;
-    margin-bottom: 20px;
-    margin-top: -170px;
 }
+
 .hero-text p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    color: #fff;
-    text-shadow: 4px 4px 6px rgba(0,0,0,0.5)
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
+
 .hero-image {
-    flex: 1 1 40%;
-    max-width: 40%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 45%;
 }
+
 .hero-image img {
     max-width: 100%;
     height: auto;
     display: block;
 }
+
 @media (max-width: 768px) {
     .hero-text, .hero-image {
         max-width: 100%;
         text-align: center;
-        margin-top: -15px;
+        margin-top: 0;
     }
     .hero-container {
         flex-direction: column-reverse;
@@ -122,9 +116,9 @@
 
 <!-- Layanan Unggulan -->
 <div class="mt-12 bg-slate-200 py-6">
-    <h3 class="text-2xl font-bold text-center text-orange-500 mb-6">
+    <h4 class="text-2xl font-bold text-center text-orange-500 mb-6">
         Layanan Unggulan
-    </h3>
+    </h4>
 
     <!-- Tombol + Search -->
     <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-6 px-4">
@@ -143,47 +137,69 @@
     </div>
 </div>
 
-<!-- Carousel Layanan -->
-<div class="relative max-w-screen-xl mx-auto px-4">
+<!-- Carousel Layanan Unggulan -->
+<div class="relative max-w-screen-xl mx-auto px-4 py-6">
+
+    <!-- Tombol Arrow -->
     <button id="unggulan-prev"
-        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full shadow hover:bg-orange-600 z-10">
+        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full shadow hover:bg-orange-600 z-10 text-lg">
         &#10094;
     </button>
     <button id="unggulan-next"
-        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full shadow hover:bg-orange-600 z-10">
+        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full shadow hover:bg-orange-600 z-10 text-lg">
         &#10095;
     </button>
-    <div id="unggulan-scroll" class="flex overflow-x-auto space-x-4 py-6 scroll-smooth scrollbar-hide">
+
+    <!-- Container Scroll -->
+    <div id="unggulan-scroll" 
+         class="flex overflow-x-auto gap-4 scroll-smooth scrollbar-hide px-2 sm:px-4 py-4 snap-x snap-mandatory">
         @for($i=1; $i<=6; $i++)
-        <div class="min-w-[250px] bg-white rounded-lg shadow hover:shadow-lg transition">
-            <img src="{{ asset("images/layanan_$i.png") }}" alt="Layanan {{ $i }}" class="w-full h-40 object-cover rounded-t-lg">
+        <div class="w-[80vw] sm:w-[65vw] md:w-[45vw] lg:w-[300px] flex-shrink-0 bg-white rounded-lg shadow hover:shadow-lg transition snap-center">
+            <img src="{{ asset("images/layanan_$i.png") }}" 
+                 alt="Layanan {{ $i }}" 
+                 class="w-full h-48 sm:h-56 md:h-48 lg:h-44 object-cover rounded-t-lg">
             <div class="p-4">
                 <h4 class="font-bold text-lg text-orange-500">Layanan {{ $i }}</h4>
-                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p class="text-gray-600 text-sm">Deskripsi layanan singkat...</p>
             </div>
         </div>
         @endfor
     </div>
 </div>
 
+
 <script>
-    const unggulanScroll = document.getElementById('unggulan-scroll');
-    const prevBtn = document.getElementById('unggulan-prev');
-    const nextBtn = document.getElementById('unggulan-next');
-    prevBtn.addEventListener('click', () => unggulanScroll.scrollBy({ left: -300, behavior: 'smooth' }));
-    nextBtn.addEventListener('click', () => unggulanScroll.scrollBy({ left: 300, behavior: 'smooth' }));
+const unggulanScroll = document.getElementById('unggulan-scroll');
+const prevBtn = document.getElementById('unggulan-prev');
+const nextBtn = document.getElementById('unggulan-next');
+
+const card = unggulanScroll.querySelector('div'); // ambil card pertama
+const style = getComputedStyle(card);
+const cardWidth = card.offsetWidth + parseInt(style.marginRight);
+
+prevBtn.addEventListener('click', () => {
+    unggulanScroll.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+});
+
+nextBtn.addEventListener('click', () => {
+    unggulanScroll.scrollBy({ left: cardWidth, behavior: 'smooth' });
+});
 </script>
+
+
+
+
 
 <!-- Perizinan Berdasarkan Kategori -->
 <div class="mt-12 bg-slate-200 py-4">
-    <h3 class="text-2xl font-bold text-center text-orange-500">
+    <h4 class="text-2xl font-bold text-center text-orange-500">
         Perizinan Berdasarkan Kategori
-    </h3>
+    </h4>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 px-10">
     @for($i=1; $i<=3; $i++)
     <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-        <h4 class="text-lg font-semibold text-blue-700">Perizinan {{ $i }}</h4>
+        <h5 class="text-lg font-semibold text-blue-700">Perizinan {{ $i }}</h5>
         <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
         <img src="{{ asset("images/perizinan$i.jpg") }}" alt="" class="w-64 h-40 object-cover rounded mt-4 mx-auto">
         <div class="flex items-center mt-3 text-sm text-gray-500">

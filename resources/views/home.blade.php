@@ -3,225 +3,292 @@
 @section('content')
 
 <style>
-/* HERO SECTION */
 .hero-section {
     background: url('{{ asset('images/background.jpg') }}') no-repeat center center;
     background-size: cover;
-    padding: 100px 0;
-    border-radius: 20px;
-    margin-top: 20px;
-    overflow: hidden;
+    padding: 100px 0; /* jarak atas bawah */
 }
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px; /* jarak antar kolom lebih lebar */
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: auto;
+    padding: 0 40px; /* jarak kiri-kanan */
 }
 .hero-text {
+    flex: 1 1 50%;
     max-width: 50%;
-    color: #fff;
 }
 .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: bold;
+    color: #0056d2;
+    margin-bottom: 20px;
 }
 .hero-text p {
     font-size: 1.2rem;
-    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #ffffffff;
 }
-.hero-image {
-    max-width: 45%;
+.hero-buttons {
+    margin-bottom: 25px;
 }
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.hero-buttons .btn-primary {
+    background-color: #0056d2;
+    color: #ffffffff;
+    font-weight: bold;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    border-radius: 6px;
 }
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-    .hero-text, .hero-image {
-        max-width: 100%;
-    }
-}
-
-/* SEARCH BOX */
 .hero-search input {
     background-color: #fff;
-    color: #6b7280;
+    color: #6b7280; /* abu-abu tailwind text-gray-500 */
     padding: 12px;
     font-size: 1rem;
     width: 100%;
     max-width: 400px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow bawah */
 }
 
-/* CAROUSEL UNGGULAN */
-.unggulan-scroll {
+.hero-image {
+    flex: 1 1 40%;
+    max-width: 40%;
+    text-align: center;
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 1rem;
-    padding: 0 1rem;
-}
-.unggulan-scroll::-webkit-scrollbar {
-    display: none;
-}
-.unggulan-card {
-    flex: 0 0 85%;
-    scroll-snap-align: center;
-}
-@media (min-width: 768px) {
-    .unggulan-scroll {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        overflow: visible;
-        padding: 0;
-    }
-    .unggulan-card {
-        flex: unset;
-        scroll-snap-align: unset;
-    }
+    align-items: center; /* tengah secara vertikal */
+    justify-content: center;
 }
 
-/* TOMBOL ARROW */
-/* Default untuk Desktop / Tablet */
-.arrow-btn {
-    padding: 0.25rem 0.4rem;
-    font-size: 0.8rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #f97316;
-    color: white;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    z-index: 10;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-.arrow-btn:hover {
-    background-color: #ea580c;
-}
-
-/* Mobile lebih kecil */
-@media (max-width: 640px) {
-    .arrow-btn {
-        padding: 0.15rem 0.3rem;
-        font-size: 0.6rem;
-    }
-}
-.unggulan-card img {
-    width: 100%;
-    height: auto; /* tinggi menyesuaikan */
-    object-fit: contain; /* tidak memotong gambar */
-}
-/* Desktop */
-.unggulan-card img {
-    width: 100%;
+.hero-image img {
+    max-width: 100%;
     height: auto;
-    object-fit: contain; /* gambar utuh, tidak terpotong */
-}
-.unggulan-card img {
     display: block;
-    margin: 0 auto;
 }
 
-
-/* Mobile */
-@media (max-width: 640px) {
-    .unggulan-card img {
-        height: auto;       /* tinggi otomatis mengikuti gambar */
-        max-height: none;   /* pastikan tidak ada batas tinggi */
-        object-fit: contain; /* gambar utuh */
+@media (max-width: 768px) {
+    .hero-text, .hero-image {
+        max-width: 100%;
+        text-align: center;
+    }
+    .hero-container {
+        flex-direction: column-reverse;
+        padding: 0 20px;
     }
 }
-
-
 </style>
 
-<!-- LAYANAN UNGGULAN -->
-<div class="relative max-w-screen-xl mx-auto px-4 py-6">
-    <!-- Tombol Arrow -->
-    <button id="unggulan-prev"
-        class="arrow-btn absolute left-2 transform -translate-y-1/2 bg-orange-500 text-white rounded-full shadow hover:bg-orange-600 z-10">
-        &#10094;
-    </button>
-    <button id="unggulan-next"
-        class="arrow-btn absolute right-2 transform -translate-y-1/2 bg-orange-500 text-white rounded-full shadow hover:bg-orange-600 z-10">
-        &#10095;
-    </button>
-
-    <!-- Container Scroll -->
-    <div id="unggulan-scroll" class="unggulan-scroll scroll-smooth">
-        @for($i=1; $i<=6; $i++)
-        <div class="unggulan-card bg-white rounded-lg shadow hover:shadow-lg transition">
-            <img src="{{ asset("images/layanan_$i.png") }}"
-     alt="Layanan {{ $i }}"
-     class="w-full h-[200px] object-cover sm:h-auto sm:object-contain rounded-t-lg">
-
-            <div class="p-4">
-                <h4 class="font-bold text-lg text-orange-500">Layanan {{ $i }}</h4>
-                <p class="text-gray-600 text-sm">Deskripsi layanan singkat...</p>
-            </div>
+<section class="hero-section">
+   <div class="hero-container">
+    <!-- Teks -->
+    <div class="hero-text">
+        <h1 class="text-3xl font-bold text-blue-700">
+            Selamat Datang di Portal Layanan Perizinan
+        </h1>
+        <p class="text-gray-600 mt-2">
+            Sistem perizinan yang cepat, transparan, dan terintegrasi untuk anda
+        </p>
+        <div class="hero-buttons mt-4">
+            <a href="#" class="btn btn-primary">Jelajahi Layanan</a>
         </div>
-        @endfor
+
+        <!-- Search with icon -->
+        <div class="relative max-w-sm mt-3 hero-search">
+            <input type="text" 
+                class="w-full p-3 pr-10 bg-white text-gray-600 placeholder-gray-400 rounded shadow-md focus:outline-none" 
+                placeholder="Cari Layanan di sini...">
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                class="h-5 w-5 text-blue-500 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" 
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+            </svg>
+        </div>
+    </div> <!-- tutup hero-text -->
+
+    <!-- Gambar Ilustrasi -->
+    <div class="hero-image">
+        <img src="{{ asset('images/hero-ilustration.png') }}" alt="Ilustrasi Layanan">
     </div>
 </div>
 
+</section>
+
+    </div>
+</div>
+
+        </div>
+</section>
+
+
+<!-- Judul -->
+<div class="mt-12 bg-slate-200 py-4">
+  <h3 class="text-2xl font-bold text-center text-orange-500">
+    Layanan Perizinan Unggulan
+  </h3>
+</div>
+
+<!-- Container Carousel -->
+<div class="relative max-w-screen-xl mx-auto px-4 py-6">
+
+  <!-- Tombol kiri -->
+    <button id="unggulan-prev"
+        class="absolute left-0 top-1/2 -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full shadow z-10">
+        &lt;
+    </button>
+
+  <!-- Layanan Scroll -->
+    <div id="unggulan-scroll" 
+         class="flex overflow-x-auto space-x-4 scroll-smooth">
+
+    <!-- Layanan 1 -->
+    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
+      <h4 class="text-lg font-semibold text-blue-700">Layanan 1</h4>
+      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
+      <img src="{{ asset('images/layanan_1.png') }}" class="w-full h-40 object-cover rounded mt-3">
+      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
+    </div>
+
+    <!-- Layanan 2 -->
+    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
+      <h4 class="text-lg font-semibold text-blue-700">Layanan 2</h4>
+      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
+      <img src="{{ asset('images/layanan_2.png') }}" class="w-full h-40 object-cover rounded mt-3">
+      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
+    </div>
+
+    <!-- Layanan 3 -->
+    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
+      <h4 class="text-lg font-semibold text-blue-700">Layanan 3</h4>
+      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
+      <img src="{{ asset('images/layanan_3.png') }}" class="w-full h-40 object-cover rounded mt-3">
+      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
+    </div>
+
+    <!-- Layanan 4 -->
+    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
+      <h4 class="text-lg font-semibold text-blue-700">Layanan 4</h4>
+      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
+      <img src="{{ asset('images/layanan_4.png') }}" class="w-full h-40 object-cover rounded mt-3">
+      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
+    </div>
+
+    <!-- Layanan 5 -->
+    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
+      <h4 class="text-lg font-semibold text-blue-700">Layanan 5</h4>
+      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
+      <img src="{{ asset('images/layanan_5.png') }}" class="w-full h-40 object-cover rounded mt-3">
+      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
+    </div>
+
+    <!-- Layanan 6 -->
+    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
+      <h4 class="text-lg font-semibold text-blue-700">Layanan 6</h4>
+      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
+      <img src="{{ asset('images/layanan_6.png') }}" class="w-full h-40 object-cover rounded mt-3">
+      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
+    </div>
+
+  </div>
+
+  <!-- Tombol kanan -->
+    <button id="unggulan-next"
+        class="absolute right-0 top-1/2 -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full shadow z-10">
+        &gt;
+    </button>
+</div>
+
 <script>
-const unggulanScroll = document.getElementById('unggulan-scroll');
-const prevBtn = document.getElementById('unggulan-prev');
-const nextBtn = document.getElementById('unggulan-next');
+    const scrollContainer = document.getElementById("unggulan-scroll");
+    const prevBtn = document.getElementById("unggulan-prev");
+    const nextBtn = document.getElementById("unggulan-next");
 
-function scrollAmount() {
-    if (window.innerWidth < 768) {
-        return unggulanScroll.offsetWidth * 0.85;
-    }
-    return 300;
-}
+    // scroll sejauh lebar 1 card
+    const scrollAmount = 260; 
 
-prevBtn.addEventListener('click', () => {
-    unggulanScroll.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
-});
-nextBtn.addEventListener('click', () => {
-    unggulanScroll.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-});
+    prevBtn.addEventListener("click", () => {
+        scrollContainer.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+        scrollContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
 </script>
 
 
 
+</section>
 
-
-<!-- Perizinan Berdasarkan Kategori -->
-<div class="mt-12 bg-slate-200 py-4">
+        <!-- Judul Daftar Layanan -->
+        <div class="mt-12 bg-slate-200 py-4">
     <h4 class="text-2xl font-bold text-center text-orange-500">
-        Perizinan Berdasarkan Kategori
+        Layanan Berdasarkan Kategori
     </h4>
 </div>
+
+<!-- Kategori -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 px-10">
-    @for($i=1; $i<=3; $i++)
+    
+    <!-- Kartu Layanan -->
     <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-        <h5 class="text-lg font-semibold text-blue-700">Perizinan {{ $i }}</h5>
-        <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <img src="{{ asset("images/perizinan$i.jpg") }}" alt="" class="w-64 h-40 object-cover rounded mt-4 mx-auto">
+        <h4 class="text-lg font-semibold text-blue-700">Layanan 1</h4>
+        <p class="text-sm text-gray-600 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        </p>
+        <img src="{{ asset('images/layanan_4.png') }}" alt="" 
+             class="w-64 h-40 object-cover rounded mt-4 mx-auto">
         <div class="flex items-center mt-3 text-sm text-gray-500">
             ❌ <span class="ml-2">Tonton Video Penjelasan</span>
         </div>
-        <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 px-4 rounded font-semibold hover:bg-orange-600">
+        <a href="#" 
+           class="block mt-3 bg-orange-500 text-white text-center py-2 px-21 rounded font-semibold hover:bg-orange-600">
             Lihat Detail
         </a>
     </div>
-    @endfor
+
+    <!-- Kartu Layanan 5 -->
+    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+        <h4 class="text-lg font-semibold text-blue-700">Layanan 2</h4>
+        <p class="text-sm text-gray-600 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        </p>
+        <img src="{{ asset('images/layanan_5.png') }}" alt="" 
+             class="w-64 h-40 object-cover rounded mt-4 mx-auto">
+        <div class="flex items-center mt-3 text-sm text-gray-500">
+            ❌ <span class="ml-2">Tonton Video Penjelasan</span>
+        </div>
+        <a href="#" 
+           class="block mt-3 bg-orange-500 text-white text-center py-2 px-21 rounded font-semibold hover:bg-orange-600">
+            Lihat Detail
+        </a>
+    </div>
+
+    <!-- Kartu Layanan 6 -->
+    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+        <h4 class="text-lg font-semibold text-blue-700">Layanan 3</h4>
+        <p class="text-sm text-gray-600 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        </p>
+        <img src="{{ asset('images/layanan_6.png') }}" alt="" 
+             class="w-64 h-40 object-cover rounded mt-4 mx-auto">
+        <div class="flex items-center mt-3 text-sm text-gray-500">
+            ❌ <span class="ml-2">Tonton Video Penjelasan</span>
+        </div>
+        <a href="#" 
+           class="block mt-3 bg-orange-500 text-white text-center py-2 px-21 rounded font-semibold hover:bg-orange-600">
+            Lihat Detail
+        </a>
+    </div>
+
 </div>
 
+        </div>
+
+    </section>
 @endsection

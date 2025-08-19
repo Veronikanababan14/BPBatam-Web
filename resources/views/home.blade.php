@@ -84,6 +84,7 @@
 }
 </style>
 
+<!-- Hero -->
 <section class="hero-section">
    <div class="hero-container">
     <!-- Teks -->
@@ -99,17 +100,19 @@
         </div>
 
         <!-- Search with icon -->
-        <div class="relative max-w-sm mt-3 hero-search">
-            <input type="text" 
-                class="w-full p-3 pr-10 bg-white text-gray-600 placeholder-gray-400 rounded shadow-md focus:outline-none" 
-                placeholder="Cari di sini...">
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                class="h-5 w-5 text-blue-500 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" 
-                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
-            </svg>
-        </div>
+<form action="{{ route('search') }}" method="GET" class="relative max-w-sm mt-12 hero-search">
+    <input type="text" name="q"
+        class="w-full p-3 pr-10 bg-white text-gray-600 placeholder-gray-400 rounded shadow-md focus:outline-none"
+        placeholder="Cari di sini...">
+    <button type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-blue-500 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+        </svg>
+    </button>
+</form>
     </div> <!-- tutup hero-text -->
 
     <!-- Gambar Ilustrasi -->
@@ -117,99 +120,48 @@
         <img src="{{ asset('images/hero-ilustration.png') }}" alt="Ilustrasi Layanan">
     </div>
 </div>
-
 </section>
 
-    </div>
-</div>
-
-        </div>
-</section>
-
-
-<!-- Judul -->
-<div class="mt-12 bg-slate-200 py-4">
+<!-- Section Layanan Unggulan -->
+<section class="mt-12 bg-slate-200 py-12 mb-20">
+  <!-- Judul -->
   <h3 class="text-2xl font-bold text-center text-orange-500">
     Layanan Unggulan
   </h3>
-</div>
 
-<!-- Container Carousel -->
-<div class="relative max-w-screen-xl mx-auto px-4 py-6">
-
-  <!-- Tombol kiri -->
+  <!-- Container Carousel -->
+  <div class="relative max-w-screen-xl mx-auto px-4 py-6">
+    <!-- Tombol kiri -->
     <button id="unggulan-prev"
         class="absolute left-0 top-1/2 -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full shadow z-10">
         &lt;
     </button>
 
-  <!-- Layanan Scroll -->
-    <div id="unggulan-scroll" 
-         class="flex overflow-x-auto space-x-4 scroll-smooth">
-
-    <!-- Layanan 1 -->
-    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
-      <h4 class="text-lg font-semibold text-blue-700">Layanan 1</h4>
-      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
-      <img src="{{ asset('images/layanan_1.png') }}" class="w-full h-40 object-cover rounded mt-3">
-      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
+    <!-- Layanan Scroll -->
+    <div id="unggulan-scroll" class="flex overflow-x-auto space-x-4 scroll-smooth">
+      <!-- Layanan Cards -->
+      @for ($i = 1; $i <= 6; $i++)
+        <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
+          <h4 class="text-lg font-semibold text-blue-700">Layanan {{ $i }}</h4>
+          <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
+          <img src="{{ asset("images/layanan_$i.png") }}" class="w-full h-40 object-cover rounded mt-3">
+          <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
+        </div>
+      @endfor
     </div>
 
-    <!-- Layanan 2 -->
-    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
-      <h4 class="text-lg font-semibold text-blue-700">Layanan 2</h4>
-      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
-      <img src="{{ asset('images/layanan_2.png') }}" class="w-full h-40 object-cover rounded mt-3">
-      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
-    </div>
-
-    <!-- Layanan 3 -->
-    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
-      <h4 class="text-lg font-semibold text-blue-700">Layanan 3</h4>
-      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
-      <img src="{{ asset('images/layanan_3.png') }}" class="w-full h-40 object-cover rounded mt-3">
-      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
-    </div>
-
-    <!-- Layanan 4 -->
-    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
-      <h4 class="text-lg font-semibold text-blue-700">Layanan 4</h4>
-      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
-      <img src="{{ asset('images/layanan_4.png') }}" class="w-full h-40 object-cover rounded mt-3">
-      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
-    </div>
-
-    <!-- Layanan 5 -->
-    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
-      <h4 class="text-lg font-semibold text-blue-700">Layanan 5</h4>
-      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
-      <img src="{{ asset('images/layanan_5.png') }}" class="w-full h-40 object-cover rounded mt-3">
-      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
-    </div>
-
-    <!-- Layanan 6 -->
-    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
-      <h4 class="text-lg font-semibold text-blue-700">Layanan 6</h4>
-      <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
-      <img src="{{ asset('images/layanan_6.png') }}" class="w-full h-40 object-cover rounded mt-3">
-      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
-    </div>
-
-  </div>
-
-  <!-- Tombol kanan -->
+    <!-- Tombol kanan -->
     <button id="unggulan-next"
         class="absolute right-0 top-1/2 -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full shadow z-10">
         &gt;
     </button>
-</div>
+  </div>
+</section>
 
 <script>
     const scrollContainer = document.getElementById("unggulan-scroll");
     const prevBtn = document.getElementById("unggulan-prev");
     const nextBtn = document.getElementById("unggulan-next");
-
-    // scroll sejauh lebar 1 card
     const scrollAmount = 260; 
 
     prevBtn.addEventListener("click", () => {
@@ -221,74 +173,31 @@
     });
 </script>
 
-
-
-</section>
-
-        <!-- Judul Daftar Layanan -->
-        <div class="mt-12 bg-slate-200 py-4">
+<!-- Section Perizinan -->
+<section class="mt-12 bg-slate-200 py-12 mb-20">
     <h4 class="text-2xl font-bold text-center text-orange-500">
         Perizinan Berdasarkan Kategori
     </h4>
-</div>
 
-<!-- Kategori -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 px-10">
-    
-    <!-- Kartu Layanan -->
-    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-        <h4 class="text-lg font-semibold text-blue-700">Perizinan 1</h4>
-        <p class="text-sm text-gray-600 mt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        </p>
-        <img src="{{ asset('images/perizinan1.jpg') }}" alt="" 
-             class="w-64 h-40 object-cover rounded mt-4 mx-auto">
-        <div class="flex items-center mt-3 text-sm text-gray-500">
-            ❌ <span class="ml-2">Tonton Video Penjelasan</span>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 px-10">
+        @for ($i = 1; $i <= 3; $i++)
+        <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+            <h4 class="text-lg font-semibold text-blue-700">Perizinan {{ $i }}</h4>
+            <p class="text-sm text-gray-600 mt-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+            </p>
+            <img src="{{ asset("images/perizinan$i.jpg") }}" alt="" 
+                class="w-64 h-40 object-cover rounded mt-4 mx-auto">
+            <div class="flex items-center mt-3 text-sm text-gray-500">
+                ❌ <span class="ml-2">Tonton Video Penjelasan</span>
+            </div>
+            <a href="#" 
+                class="block mt-3 bg-orange-500 text-white text-center py-2 px-6 rounded font-semibold hover:bg-orange-600">
+                Lihat Detail
+            </a>
         </div>
-        <a href="#" 
-           class="block mt-3 bg-orange-500 text-white text-center py-2 px-21 rounded font-semibold hover:bg-orange-600">
-            Lihat Detail
-        </a>
+        @endfor
     </div>
+</section>
 
-    <!-- Kartu Layanan 5 -->
-    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-        <h4 class="text-lg font-semibold text-blue-700">Perizinan 2</h4>
-        <p class="text-sm text-gray-600 mt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        </p>
-        <img src="{{ asset('images/perizinan2.jpg') }}" alt="" 
-             class="w-64 h-40 object-cover rounded mt-4 mx-auto">
-        <div class="flex items-center mt-3 text-sm text-gray-500">
-            ❌ <span class="ml-2">Tonton Video Penjelasan</span>
-        </div>
-        <a href="#" 
-           class="block mt-3 bg-orange-500 text-white text-center py-2 px-21 rounded font-semibold hover:bg-orange-600">
-            Lihat Detail
-        </a>
-    </div>
-
-    <!-- Kartu Layanan 6 -->
-    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-        <h4 class="text-lg font-semibold text-blue-700">Perizinan 3</h4>
-        <p class="text-sm text-gray-600 mt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        </p>
-        <img src="{{ asset('images/perizinan3.jpg') }}" alt="" 
-             class="w-64 h-40 object-cover rounded mt-4 mx-auto">
-        <div class="flex items-center mt-3 text-sm text-gray-500">
-            ❌ <span class="ml-2">Tonton Video Penjelasan</span>
-        </div>
-        <a href="#" 
-           class="block mt-3 bg-orange-500 text-white text-center py-2 px-21 rounded font-semibold hover:bg-orange-600">
-            Lihat Detail
-        </a>
-    </div>
-
-</div>
-
-        </div>
-
-    </section>
 @endsection

@@ -95,14 +95,14 @@
             Sistem perizinan yang cepat, transparan, dan terintegrasi untuk anda
         </p>
         <div class="hero-buttons mt-4">
-            <a href="#" class="btn btn-primary">Jelajahi Layanan</a>
+            <a href="#" class="btn btn-primary">Jelajahi Layanan/Perizinan</a>
         </div>
 
         <!-- Search with icon -->
         <div class="relative max-w-sm mt-3 hero-search">
             <input type="text" 
                 class="w-full p-3 pr-10 bg-white text-gray-600 placeholder-gray-400 rounded shadow-md focus:outline-none" 
-                placeholder="Cari Layanan di sini...">
+                placeholder="Cari di sini...">
             <svg xmlns="http://www.w3.org/2000/svg" 
                 class="h-5 w-5 text-blue-500 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" 
                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -130,7 +130,7 @@
 <!-- Judul -->
 <div class="mt-12 bg-slate-200 py-4">
   <h3 class="text-2xl font-bold text-center text-orange-500">
-    Layanan Perizinan Unggulan
+    Layanan Unggulan
   </h3>
 </div>
 
@@ -228,7 +228,7 @@
         <!-- Judul Daftar Layanan -->
         <div class="mt-12 bg-slate-200 py-4">
     <h4 class="text-2xl font-bold text-center text-orange-500">
-        Layanan Berdasarkan Kategori
+        Perizinan Berdasarkan Kategori
     </h4>
 </div>
 
@@ -237,11 +237,11 @@
     
     <!-- Kartu Layanan -->
     <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-        <h4 class="text-lg font-semibold text-blue-700">Layanan 1</h4>
+        <h4 class="text-lg font-semibold text-blue-700">Perizinan 1</h4>
         <p class="text-sm text-gray-600 mt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
-        <img src="{{ asset('images/layanan_4.png') }}" alt="" 
+        <img src="{{ asset('images/perizinan1.jpg') }}" alt="" 
              class="w-64 h-40 object-cover rounded mt-4 mx-auto">
         <div class="flex items-center mt-3 text-sm text-gray-500">
             ❌ <span class="ml-2">Tonton Video Penjelasan</span>
@@ -254,11 +254,11 @@
 
     <!-- Kartu Layanan 5 -->
     <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-        <h4 class="text-lg font-semibold text-blue-700">Layanan 2</h4>
+        <h4 class="text-lg font-semibold text-blue-700">Perizinan 2</h4>
         <p class="text-sm text-gray-600 mt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
-        <img src="{{ asset('images/layanan_5.png') }}" alt="" 
+        <img src="{{ asset('images/perizinan2.jpg') }}" alt="" 
              class="w-64 h-40 object-cover rounded mt-4 mx-auto">
         <div class="flex items-center mt-3 text-sm text-gray-500">
             ❌ <span class="ml-2">Tonton Video Penjelasan</span>
@@ -271,11 +271,11 @@
 
     <!-- Kartu Layanan 6 -->
     <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-        <h4 class="text-lg font-semibold text-blue-700">Layanan 3</h4>
+        <h4 class="text-lg font-semibold text-blue-700">Perizinan 3</h4>
         <p class="text-sm text-gray-600 mt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
-        <img src="{{ asset('images/layanan_6.png') }}" alt="" 
+        <img src="{{ asset('images/perizinan3.jpg') }}" alt="" 
              class="w-64 h-40 object-cover rounded mt-4 mx-auto">
         <div class="flex items-center mt-3 text-sm text-gray-500">
             ❌ <span class="ml-2">Tonton Video Penjelasan</span>

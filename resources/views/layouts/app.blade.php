@@ -47,16 +47,18 @@
     </style>
 </head>
 <body>
-    @unless (request()->routeIs('login'))
+    @unless (request()->routeIs('login') || request()->routeIs('register'))
+        @include('partials.navbar') {{-- <---- tambahkan ini --}}
     @endunless
     
     <main>  
         @yield('content')
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        @unless (request()->routeIs('login'))
-    @include('components.footer')
-@endunless
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        @unless (request()->routeIs('login') || request()->routeIs('register'))
+            @include('components.footer')
+        @endunless
     </main>
 </body>
 </html>

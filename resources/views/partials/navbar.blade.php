@@ -24,7 +24,7 @@
         <!-- Menu Left -->
         <div class="my-auto">
           <ul class="font-medium flex flex-row md:space-x-8">
-            <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">Beranda</a></li>
+            <li><a href="{{ route('beranda') }}" class="block py-2 px-3 text-blue-700 font-bold">Beranda</a></li>
             <li><a href="#" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">Layanan</a></li>
             <li><a href="#" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">FAQ</a></li>
             <li><a href="#" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">Kontak</a></li>
@@ -52,7 +52,7 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-md">
       <ul class="flex flex-col p-4 space-y-2 font-medium">
-        <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">Beranda</a></li>
+        <li><a href="{{ url('/') }}" class="block py-2 px-3 text-blue-700 font-bold">Beranda</a></li>
         <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">Layanan</a></li>
         <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">FAQ</a></li>
         <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">Kontak</a></li>

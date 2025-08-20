@@ -96,7 +96,7 @@
             Sistem perizinan yang cepat, transparan, dan terintegrasi untuk anda
         </p>
         <div class="hero-buttons mt-4">
-            <a href="#" class="btn btn-primary">Jelajahi Layanan/Perizinan</a>
+            <a href="{{ route('beranda') }}" class="btn btn-primary">Jelajahi Layanan/Perizinan</a>
         </div>
 
         <!-- Search with icon -->

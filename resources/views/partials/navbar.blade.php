@@ -23,7 +23,7 @@
     <div class="hidden md:flex gap-x-24">
         <!-- Menu Left -->
         <div class="my-auto">
-          <ul class="font-medium flex flex-row md:space-x-8">
+          <ul class="font-medium text-lg flex flex-row md:space-x-8">
             <li><a href="{{ route('beranda') }}" class="block py-2 px-3 text-blue-700 font-bold">Beranda</a></li>
             <li><a href="{{ route('layanan') }}" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">Layanan</a></li>
             <li><a href="{{ route('faq') }}" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">FAQ</a></li>
@@ -33,17 +33,19 @@
 
         <!-- Menu Right -->
         <div class="my-auto">
-          <ul class="font-medium flex flex-row md:space-x-8 items-center">
+          <ul class="font-medium text-lg flex flex-row md:space-x-8 items-center">
             <li>
               <a href="{{ route('login') }}" class="block py-2 px-3 text-orange-500 font-bold">
                 Login
               </a>
             </li>
             <li>
-              <a href="{{ route('register') }}" class="flex justify-center items-center text-white bg-blue-700 hover:bg-blue-800 px-4 py-3 rounded-sm font-bold">
-                Sign Up
-              </a>
-            </li>
+  <a href="{{ route('register') }}"
+     class="inline-flex justify-center items-center text-base leading-none text-white bg-blue-700 hover:bg-blue-800 px-4 py-2.5 rounded-lg font-bold shadow">
+    Sign Up
+  </a>
+</li>
+
           </ul>
         </div>
     </div>

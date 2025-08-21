@@ -28,3 +28,19 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegister'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Route Layanan
+Route::get('/layanan', [PageController::class, 'layanan'])->name('layanan');
+Route::get('/izin/usaha', [LayananController::class, 'usaha'])->name('izin.usaha');
+Route::get('/izin/lokasi', [LayananController::class, 'lokasi'])->name('izin.lokasi');
+Route::get('/izin/pbg', [LayananController::class, 'pbg'])->name('izin.pbg');
+Route::get('/izin/lingkungan', [LayananController::class, 'lingkungan'])->name('izin.lingkungan');
+Route::get('/izin/tka', [LayananController::class, 'tka'])->name('izin.tka');
+Route::get('/izin/kawasan', [LayananController::class, 'kawasan'])->name('izin.kawasan');
+
+// Route faq
+Route::get('/faq', [PageController::class, 'faq'])->name('faq');
+
+// Route kontak
+Route::get('/kontak', [PageController::class, 'kontak'])->name('kontak');
+

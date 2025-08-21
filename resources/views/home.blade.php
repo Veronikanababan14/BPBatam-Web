@@ -85,7 +85,7 @@
 </style>
 
 <!-- Hero -->
-<section class="hero-section">
+<section class="hero-section pt-20">
    <div class="hero-container">
     <!-- Teks -->
     <div class="hero-text">
@@ -104,14 +104,18 @@
     <input type="text" name="q"
         class="w-full p-3 pr-10 bg-white text-gray-600 placeholder-gray-400 rounded shadow-md focus:outline-none"
         placeholder="Cari di sini...">
-    <button type="submit">
+
+    <button type="submit" 
+        class="absolute inset-y-0 right-3 flex items-center text-blue-500">
         <svg xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-blue-500 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+            class="h-5 w-5"
             fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
         </svg>
     </button>
+</form>
+
 </form>
     </div> <!-- tutup hero-text -->
 
@@ -125,9 +129,9 @@
 <!-- Section Layanan Unggulan -->
 <section class="mt-12 bg-slate-200 py-12 mb-20">
   <!-- Judul -->
-  <h3 class="text-2xl font-bold text-center text-orange-500">
+  <h4 class="text-2xl font-bold text-center text-orange-500">
     Layanan Unggulan
-  </h3>
+  </h4>
 
   <!-- Container Carousel -->
   <div class="relative max-w-screen-xl mx-auto px-4 py-6">

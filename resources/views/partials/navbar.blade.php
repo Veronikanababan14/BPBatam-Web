@@ -25,9 +25,9 @@
         <div class="my-auto">
           <ul class="font-medium flex flex-row md:space-x-8">
             <li><a href="{{ route('beranda') }}" class="block py-2 px-3 text-blue-700 font-bold">Beranda</a></li>
-            <li><a href="#" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">Layanan</a></li>
-            <li><a href="#" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">FAQ</a></li>
-            <li><a href="#" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">Kontak</a></li>
+            <li><a href="{{ route('layanan') }}" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">Layanan</a></li>
+            <li><a href="{{ route('faq') }}" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">FAQ</a></li>
+            <li><a href="{{ route('kontak') }}" class="block py-2 px-3 text-blue-700 hover:bg-gray-100 md:hover:bg-transparent font-bold">Kontak</a></li>
           </ul>
         </div>
 
@@ -52,10 +52,10 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-md">
       <ul class="flex flex-col p-4 space-y-2 font-medium">
-        <li><a href="{{ url('/') }}" class="block py-2 px-3 text-blue-700 font-bold">Beranda</a></li>
-        <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">Layanan</a></li>
-        <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">FAQ</a></li>
-        <li><a href="#" class="block py-2 px-3 text-blue-700 font-bold">Kontak</a></li>
+        <li><a href="{{ route('beranda') }}" class="block py-2 px-3 text-blue-700 font-bold">Beranda</a></li>
+        <li><a href="{{ route('layanan') }}" class="block py-2 px-3 text-blue-700 font-bold">Layanan</a></li>
+        <li><a href="{{ route('faq') }}" class="block py-2 px-3 text-blue-700 font-bold">FAQ</a></li>
+        <li><a href="{{ route('kontak') }}" class="block py-2 px-3 text-blue-700 font-bold">Kontak</a></li>
         <li><a href="{{ route('login') }}" class="block py-2 px-3 text-orange-500 font-bold">Login</a></li>
         <li><a href="{{ route('register') }}" class="flex justify-center items-center text-white bg-blue-700 hover:bg-blue-800 px-3 py-1.5 rounded-sm font-bold text-sm">Sign Up</a></li>
       </ul>

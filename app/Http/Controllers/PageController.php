@@ -33,5 +33,16 @@ class PageController extends Controller
     public function kontak() {
         return view('pages.kontak');
     }
+
+    public function faq()
+{
+    return view('pages.faq');
+}
+
+ public function layanan() 
+ {
+    return view('pages.layanan'); 
+    }
+
 }
 

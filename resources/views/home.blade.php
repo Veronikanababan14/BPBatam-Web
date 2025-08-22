@@ -116,7 +116,6 @@
     </button>
 </form>
 
-</form>
     </div> <!-- tutup hero-text -->
 
     <!-- Gambar Ilustrasi -->
@@ -142,17 +141,31 @@
     </button>
 
     <!-- Layanan Scroll -->
-    <div id="unggulan-scroll" class="flex overflow-x-auto space-x-4 scroll-smooth">
-      <!-- Layanan Cards -->
-      @for ($i = 1; $i <= 6; $i++)
-        <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
-          <h4 class="text-lg font-semibold text-blue-700">Layanan {{ $i }}</h4>
-          <p class="text-sm text-gray-600 mt-2">Lorem ipsum dolor sit amet...</p>
-          <img src="{{ asset("images/layanan_$i.png") }}" class="w-full h-40 object-cover rounded mt-3">
-          <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">Lihat Detail</a>
-        </div>
-      @endfor
+<div id="unggulan-scroll" class="flex overflow-x-auto space-x-4 scroll-smooth">
+  @forelse ($layanans as $index => $l)
+    <div class="flex-shrink-0 w-64 bg-white rounded-lg shadow-lg p-4">
+      <h4 class="text-lg font-semibold text-blue-700">{{ $l->nama }}</h4>
+      <p class="text-sm text-gray-600 mt-2">{{ $l->deskripsi }}</p>
+
+      {{-- gambar: kalau ada dari DB, kalau kosong fallback ke images/layanan_X.png --}}
+      <img src="{{ $l->gambar 
+                  ? asset('storage/'.$l->gambar) 
+                  : asset('images/layanan_'.(($index % 6) + 1).'.png') }}" 
+           class="w-full h-40 object-cover rounded mt-3">
+
+      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">
+        Lihat Detail
+      </a>
     </div>
+  @empty
+    <p class="text-center text-gray-500">Belum ada layanan</p>
+  @endforelse
+</div>
+
+{{-- Pagination Layanan --}}
+<div class="mt-4">
+    {{ $layanans->appends(['search' => request('search')])->links() }}
+</div>
 
     <!-- Tombol kanan -->
     <button id="unggulan-next"
@@ -184,24 +197,37 @@
     </h4>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 px-10">
-        @for ($i = 1; $i <= 3; $i++)
-        <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-            <h4 class="text-lg font-semibold text-blue-700">Perizinan {{ $i }}</h4>
-            <p class="text-sm text-gray-600 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </p>
-            <img src="{{ asset("images/perizinan$i.jpg") }}" alt="" 
-                class="w-64 h-40 object-cover rounded mt-4 mx-auto">
-            <div class="flex items-center mt-3 text-sm text-gray-500">
-                ❌ <span class="ml-2">Tonton Video Penjelasan</span>
-            </div>
-            <a href="#" 
-                class="block mt-3 bg-orange-500 text-white text-center py-2 px-6 rounded font-semibold hover:bg-orange-600">
-                Lihat Detail
-            </a>
-        </div>
-        @endfor
+  @forelse ($perizinans as $index => $p)
+    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+      <h4 class="text-lg font-semibold text-blue-700">{{ $p->nama }}</h4>
+      <p class="text-sm text-gray-600 mt-2">{{ $p->deskripsi }}</p>
+
+      {{-- gambar: dari DB atau fallback ke perizinanX.jpg --}}
+      <img src="{{ $p->gambar 
+                  ? asset('storage/'.$p->gambar) 
+                  : asset('images/perizinan'.(($index % 3) + 1).'.jpg') }}" 
+           class="w-64 h-40 object-cover rounded mt-4 mx-auto">
+
+      <div class="flex items-center mt-3 text-sm text-gray-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+        <span class="ml-2">Tonton Video Penjelasan</span>
+      </div>
+
+      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 px-6 rounded font-semibold hover:bg-orange-600">
+        Lihat Detail
+      </a>
     </div>
+  @empty
+    <p class="text-center text-gray-500">Belum ada perizinan</p>
+  @endforelse
+</div>
+
+{{-- Pagination Perizinan --}}
+<div class="mt-4">
+    {{ $perizinans->appends(['search' => request('search')])->links() }}
+</div>
 </section>
 
 @endsection

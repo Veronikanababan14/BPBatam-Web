@@ -5,12 +5,14 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LayananController;
 
-// Halaman Beranda + Hero
-Route::get('/', [PageController::class, 'home'])->name('home');
+// Landing Page
+Route::get('/', [LandingController::class, 'index'])->name('landing');
 
-Route::get('/', [PageController::class, 'home'])->name('home'); // landing page
-Route::get('/beranda', [PageController::class, 'beranda'])->name('beranda'); // halaman beranda
+// Beranda
+Route::get('/beranda', [PageController::class, 'beranda'])->name('beranda');
 
 // Submenu
 Route::get('/profil', [PageController::class, 'profil'])->name('profil');
@@ -38,9 +40,5 @@ Route::get('/izin/lingkungan', [LayananController::class, 'lingkungan'])->name('
 Route::get('/izin/tka', [LayananController::class, 'tka'])->name('izin.tka');
 Route::get('/izin/kawasan', [LayananController::class, 'kawasan'])->name('izin.kawasan');
 
-// Route faq
+// FAQ
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
-
-// Route kontak
-Route::get('/kontak', [PageController::class, 'kontak'])->name('kontak');
-

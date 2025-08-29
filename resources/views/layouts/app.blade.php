@@ -56,9 +56,10 @@
         @include('partials.navbar')
     @endunless
 
-    <main class="min-h-screen">
-        @yield('content')
-    </main>
+    <main class="min-h-screen pt-20"> {{-- kasih padding-top setara tinggi navbar --}}
+    @yield('content')
+</main>
+
 
     @unless (request()->routeIs('login') || request()->routeIs('register'))
         @include('components.footer')

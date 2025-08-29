@@ -33,17 +33,37 @@
             </div>
 
             <!-- Peta -->
-            <div class="rounded-2xl overflow-hidden shadow">
-                <h3 class="bg-blue-700 text-white py-3 px-4 text-lg font-semibold">Lokasi Kami</h3>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.035991588252!2d104.048!3d1.124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d989f2d56b123%3A0xabcdef123456789!2sBP%20Batam!5e0!3m2!1sid!2sid!4v0000000" 
-                    width="100%" 
-                    height="350" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
-            </div>
+<div class="rounded-2xl overflow-hidden shadow md:sticky md:top-24 h-[400px]">
+  <h3 class="bg-blue-700 text-white py-3 px-4 text-lg font-semibold">Lokasi Kami</h3>
+  <div id="map" class="h-[350px] w-full"></div>
+</div>
+
+
+<!-- Tambahkan Leaflet CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  // Koordinat BP Batam (sekitar Batam Centre)
+  var bpBatamLat = 1.124;
+  var bpBatamLng = 104.048;
+
+  // Inisialisasi map
+  var map = L.map('map').setView([bpBatamLat, bpBatamLng], 16);
+
+  // Tambahkan layer OSM
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Tambahkan marker
+  var marker = L.marker([bpBatamLat, bpBatamLng]).addTo(map);
+
+  // Popup saat marker diklik
+  marker.bindPopup("<b>BP Batam</b><br>Jl. Engku Putri, Batam Centre, Kepulauan Riau");
+</script>
+
         </div>
     </div>
 </div>

@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-5xl mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold text-center mb-8 text-blue-700">❓ Frequently Asked Questions (FAQ) BP Batam</h1>
+
+<div class="max-w-4xl w-full px-4 py-10 ml-0">
+    <h1 class="text-3xl font-bold mb-8 text-blue-700">FAQ</h1>
 
     <div class="space-y-4">
-        <!-- Item FAQ -->
+        <!-- Item FAQ 1 -->
         <div class="border rounded-xl shadow-sm p-5">
             <button onclick="toggleFaq(1)" class="flex justify-between items-center w-full text-left">
                 <span class="font-semibold text-lg text-gray-800">Apa itu layanan perizinan BP Batam?</span>
@@ -14,11 +15,11 @@
                 </svg>
             </button>
             <p id="answer-1" class="mt-2 text-gray-600 hidden">
-                Layanan perizinan BP Batam adalah sistem yang memfasilitasi masyarakat dan pelaku usaha dalam mengurus berbagai izin usaha, izin lokasi, PBG, izin lingkungan, hingga perizinan tenaga kerja asing secara mudah dan transparan.
+                Layanan perizinan BP Batam adalah sistem yang memfasilitasi masyarakat dan pelaku usaha ...
             </p>
         </div>
 
-        <!-- Item FAQ -->
+        <!-- Item FAQ 2 -->
         <div class="border rounded-xl shadow-sm p-5">
             <button onclick="toggleFaq(2)" class="flex justify-between items-center w-full text-left">
                 <span class="font-semibold text-lg text-gray-800">Bagaimana cara mengajukan izin di BP Batam?</span>
@@ -27,11 +28,11 @@
                 </svg>
             </button>
             <p id="answer-2" class="mt-2 text-gray-600 hidden">
-                Permohonan izin dapat dilakukan secara online melalui portal layanan BP Batam atau datang langsung ke kantor PTSP (Pelayanan Terpadu Satu Pintu).
+                Permohonan izin dapat dilakukan secara online melalui portal layanan BP Batam atau datang langsung ke kantor PTSP.
             </p>
         </div>
 
-        <!-- Item FAQ -->
+        <!-- Item FAQ 3 -->
         <div class="border rounded-xl shadow-sm p-5">
             <button onclick="toggleFaq(3)" class="flex justify-between items-center w-full text-left">
                 <span class="font-semibold text-lg text-gray-800">Berapa lama proses penerbitan izin?</span>
@@ -44,7 +45,7 @@
             </p>
         </div>
 
-        <!-- Item FAQ -->
+        <!-- Item FAQ 4 -->
         <div class="border rounded-xl shadow-sm p-5">
             <button onclick="toggleFaq(4)" class="flex justify-between items-center w-full text-left">
                 <span class="font-semibold text-lg text-gray-800">Siapa yang bisa saya hubungi jika mengalami kesulitan?</span>

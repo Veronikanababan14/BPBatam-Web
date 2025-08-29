@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Layanan;             // tambahkan ini
+use Illuminate\Support\Facades\View; // tambahkan ini
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Bagikan semua layanan ke semua view
+        $allLayanans = Layanan::all();
+        View::share('allLayanans', $allLayanans);
     }
 }

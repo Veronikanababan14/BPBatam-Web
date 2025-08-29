@@ -96,17 +96,17 @@
             Sistem perizinan yang cepat, transparan, dan terintegrasi untuk anda
         </p>
         <div class="hero-buttons mt-4">
-            <a href="{{ route('beranda') }}" class="btn btn-primary">Jelajahi Layanan/Perizinan</a>
+            <a href="{{ route('layanan.index') }}" class="btn btn-primary">Jelajahi Layanan/Perizinan</a>
         </div>
 
         <!-- Search with icon -->
-<form action="{{ route('search') }}" method="GET" class="relative max-w-sm mt-12 hero-search">
+<form action="{{ route('layanan.search') }}" method="GET" class="relative max-w-sm mt-12 hero-search">
     <input type="text" name="q"
         class="w-full p-3 pr-10 bg-white text-gray-600 placeholder-gray-400 rounded shadow-md focus:outline-none"
         placeholder="Cari di sini...">
 
     <button type="submit" 
-        class="absolute inset-y-0 right-3 flex items-center text-blue-500">
+        class="absolute inset-y-0 right-3 flex items-center text-blue-500 cursor-pointer hover:text-blue-700 transition">
         <svg xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
             fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -115,6 +115,7 @@
         </svg>
     </button>
 </form>
+
 
     </div> <!-- tutup hero-text -->
 
@@ -126,7 +127,7 @@
 </section>
 
 <!-- Section Layanan Unggulan -->
-<section class="mt-12 bg-slate-200 py-12 mb-20">
+<section id="layanan-unggulan" class="mt-12 bg-slate-200 py-12 mb-20">
   <!-- Judul -->
   <h4 class="text-2xl font-bold text-center text-orange-500">
     Layanan Unggulan
@@ -153,18 +154,15 @@
                   : asset('images/layanan_'.(($index % 6) + 1).'.png') }}" 
            class="w-full h-40 object-cover rounded mt-3">
 
-      <a href="#" class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">
-        Lihat Detail
-      </a>
+      <a href="{{ route('layanan.show', $l->id) }}" 
+   class="block mt-3 bg-orange-500 text-white text-center py-2 rounded font-semibold hover:bg-orange-600">
+   Lihat Detail
+</a>
+
     </div>
   @empty
     <p class="text-center text-gray-500">Belum ada layanan</p>
   @endforelse
-</div>
-
-{{-- Pagination Layanan --}}
-<div class="mt-4">
-    {{ $layanans->appends(['search' => request('search')])->links() }}
 </div>
 
     <!-- Tombol kanan -->
@@ -202,10 +200,10 @@
       <h4 class="text-lg font-semibold text-blue-700">{{ $p->nama }}</h4>
       <p class="text-sm text-gray-600 mt-2">{{ $p->deskripsi }}</p>
 
-      {{-- gambar: dari DB atau fallback ke perizinanX.jpg --}}
+      {{-- gambar: dari DB atau fallback ke perizinanX.png --}}
       <img src="{{ $p->gambar 
                   ? asset('storage/'.$p->gambar) 
-                  : asset('images/perizinan'.(($index % 3) + 1).'.jpg') }}" 
+                  : asset('images/perizinan'.(($index % 3) + 1).'.png') }}" 
            class="w-64 h-40 object-cover rounded mt-4 mx-auto">
 
       <div class="flex items-center mt-3 text-sm text-gray-500">
@@ -224,10 +222,6 @@
   @endforelse
 </div>
 
-{{-- Pagination Perizinan --}}
-<div class="mt-4">
-    {{ $perizinans->appends(['search' => request('search')])->links() }}
-</div>
 </section>
 
 @endsection

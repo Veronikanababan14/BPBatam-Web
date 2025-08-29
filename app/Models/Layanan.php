@@ -9,5 +9,6 @@ class Layanan extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'deskripsi'];
+    protected $table = 'layanans'; // nama tabel sesuai database
+    protected $fillable = ['nama', 'deskripsi', 'gambar'];
 }
